@@ -31,4 +31,4 @@ export const FLAGS: Flag[] = [
     { name: 'Sweden', code: 'SE' },
     { name: 'Switzerland', code: 'CH' },
     { name: 'United Kingdom', code: 'GB' }
-]
+];

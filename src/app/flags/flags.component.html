@@ -11,7 +11,16 @@
     <h2 *ngIf="myGuess && myGuess===randomNationName">Correct guess!</h2>
 </div> -->
 
-<h2>European flags</h2>
-<ul>
-    <li>{{flags}}</li>
+<h2>European countries</h2>
+<div *ngIf="selectedFlag">
+    <h2>{{selectedFlag.name | uppercase}}</h2>
+    <div><span>Alpha code: </span>{{selectedFlag.code}}</div>
+</div>
+
+<ul class="flags">
+    <li [class.selected]="flag === selectedFlag"
+        *ngFor="let flag of flags"
+        (click)="onSelect(flag)">
+        <span class="badge">{{flag.name}}</span>
+    </li>
 </ul>

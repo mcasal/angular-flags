@@ -13,6 +13,7 @@ export class FlagsComponent implements OnInit {
   randomNationCode: string | undefined;
   myGuess: string | undefined;
   flags = FLAGS;
+  selectedFlag: Flag | undefined;
 
   constructor(private CountriesService: CountriesService) { }
 
@@ -25,6 +26,12 @@ export class FlagsComponent implements OnInit {
 
     this.randomNationName = countries[random].name;
     this.randomNationCode = countries[random].code;
+  }
+
+  onSelect(flag: Flag) {
+    this.selectedFlag = flag;
+    console.log(this.selectedFlag);
+
   }
 
 }
